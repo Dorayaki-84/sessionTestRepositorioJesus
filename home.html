@@ -1,12 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <title>Apuntes curso</title>
 </head>
+
 <body>
-    
+
+
+    <!--Etiquetas de textos-->
+    <p>Párrafo</p>
+    <h1>Texto para encabezado, va del h1 al h6</h1>
+    <em>Texto en cursiva</em>
+    <strong>Texto en negrita</strong>
+
+    <!--Listas en HTML-->
+    <p>Lista desordenada</p>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+    <br>
+    <p>Lista ordenada</p>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ol>
+
+    <!--Enlaces-->
+    <a href="Direccion">Texto de la imagen</a>
+
+    <!--Imagenes-->
+    <img src="Direccion" alt="Lo que sale si no se carga la imagen">
+    <br>
+    <br>
+    <!--Tablas-->
+    <table>
+        <thead>
+            <tr>
+                <th>Encabezado 1</th>
+                <th>Encabezado 2</th>
+                <th>Encabezado 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fila 1, Columna 1</td>
+                <td>Fila 1, Columna 2</td>
+                <td>Fila 1, Columna 3</td>
+            </tr>
+            <tr>
+                <td>Fila 2, Columna 1</td>
+                <td>Fila 2, Columna 2</td>
+                <td>Fila 2, Columna 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Formularios-->
+    <form action="/procesar_formulario" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="sexo">Género:</label>
+
+        <label for="opcion1">Masculino</label>
+        <input type="radio" id="opcion1" name="genero" value="masculino">
+
+        <label for="opcion2">Femenino</label>
+        <input type="radio" id="opcion2" name="genero" value="femenino">
+
+        <label for="opcion3">Otro sexo</label>
+        <input type="radio" id="opcion3" name="genero" value="otro">
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+
+
+    <style>
+        .negro {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <p>Esto es un mini ejercicio del curso</p>
+    <table class="negro">
+        <thead>
+            <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>X</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>29</td>
+                <td>5</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>6</td>
+                <td>13</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>

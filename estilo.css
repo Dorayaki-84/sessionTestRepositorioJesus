@@ -1,0 +1,20 @@
+p{
+    color: blue; /*Color de texto*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*  TAMAÑO DE LAS LETRAS MAS IMPORTANTES:
+    px establece los pixeles
+    em en relación al tamaño original 2em sería el doble del original
+    pt es en puntos
+    % en relación al elemento contenedor
+    Las fuentes se cargan del pc o se puede usar googleFonts para que todo el mundo la pueda tener
+
+    FUENTES:
+    font-family Establece la fuente que vamos a usar, si no estuviese coge otra por defecto
+
+    FONDOS:
+    background-color cambia el color del fondo
+    background-image establece una imagen y se puede repetir en los ejes x o y
+
+*/
