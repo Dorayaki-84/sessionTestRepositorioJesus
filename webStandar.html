@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Web Moderna</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo de estilos CSS -->
+</head>
+<body>
+    <!-- Sección de encabezado -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca">Acerca</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de inicio -->
+    <section id="inicio">
+        <h1>Bienvenido a Mi Web Moderna</h1>
+        <p>¡Descubre nuestras increíbles características y servicios!</p>
+        <a href="#contacto">Contáctanos</a>
+    </section>
+
+    <!-- Sección Acerca de -->
+    <section id="acerca">
+        <h2>Acerca de Nosotros</h2>
+        <p>Somos una empresa líder en brindar soluciones web modernas y personalizadas.</p>
+        <img src="acerca.jpg" alt="Imagen Acerca de Nosotros">
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Diseño web</li>
+            <li>Desarrollo de aplicaciones móviles</li>
+            <li>Marketing digital</li>
+            <li>Optimización SEO</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="enviar.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <!-- Sección de pie de página -->
+    <footer>
+        <p>Derechos de Autor &copy; 2023 Mi Web Moderna. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
