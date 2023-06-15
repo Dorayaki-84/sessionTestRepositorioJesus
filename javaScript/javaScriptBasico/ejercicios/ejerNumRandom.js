@@ -1,6 +1,6 @@
 
 let n1 =  Math.ceil(Math.random()*6); //creamos la variable con el método math que nos da un numero al azar.
-let n2 =  Math.ceil(Math.random()*6);
+let n2 =  Math.ceil(Math.random()*6); //math.ramdon da un numero entre 0.1 y 0.99 y con math.ceil redondeamos a entero.
 
 
 console.log(n1); //mostarmos la variable
