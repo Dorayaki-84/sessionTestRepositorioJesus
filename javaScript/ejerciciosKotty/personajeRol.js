@@ -35,4 +35,5 @@ let personaje = {
     Asesinatos: Asesinatos
   };
   
-console.log("Has creado el siguiente personaje:" + personaje); //y por ultimo pasamos a consola el resultado.
+console.log("Has creado el siguiente personaje:");
+console.log(personaje); //y por ultimo pasamos a consola el resultado.
