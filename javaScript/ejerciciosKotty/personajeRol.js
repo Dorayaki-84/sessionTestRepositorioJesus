@@ -14,6 +14,11 @@
 
 //EJERCICIO
 
+/* SIGUIENTE EJERCICIO
+Al final de cada flujo de crear personaje, preguntar al usuario si quiere continuar creando otro personaje
+En caso afirmativo: Vuelves a lanzar los mismos prompts, y obtienes los datos sin perder los anteriores para mostrarlos por pantalla
+En caso negativo: Ponemos un mensaje de que ha finalizado con la creación de personajes. */
+
 let Raza = prompt("Vamos a crear un personaje, introduce la raza:");
 let Nombre = prompt("Ahora introduce el nombre:");
 let Sexo = prompt("Muy bien, ¿puedes decirme el sexo?");
