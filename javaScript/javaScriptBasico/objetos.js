@@ -26,7 +26,7 @@
 // // console.log(num1)
 // // console.log(num2)
 
-//ejercicio de objeto
+//ejercicio de objeto (los objetos son colecciones de propiedas sin ordenar pero identificadas.)
 
 let hero = {
   character: "Iron man",
