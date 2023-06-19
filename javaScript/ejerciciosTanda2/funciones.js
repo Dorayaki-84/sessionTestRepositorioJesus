@@ -13,3 +13,13 @@ function sumar(num1, num2) {  //declaramos la funcion sumar que tendrá dos nume
 
   let resultado = sumar(5,4); //y ahora creamos la variable resultado que tendrá la funcion suma
   console.log(resultado)
+
+  //FUNCION FLECHA (ACOSTUMBRARSE)
+
+  const sayHello = (name) =>{   //estructura basica
+console.log(`Hello ${name}`);    //template literal sustituye a "hello" + name
+  } 
+ 
+  sayHello("Jesus") //acordarse de que vaya en string con comillas
+
+  //Si necesitamos sacar los valores al exterior usamos return
