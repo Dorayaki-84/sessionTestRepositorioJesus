@@ -1,0 +1,10 @@
+crear un estilo bonito para un formulario
+```
+#formulario{
+    width: 400px;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #f2f2f2;
+}
