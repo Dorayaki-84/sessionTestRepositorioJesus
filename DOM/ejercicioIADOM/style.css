@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+  }
+  
+  li.completed {
+    list-style: none;
+    text-decoration: overline;
+    padding: 0;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: bisque;
+    border-radius: 5px;
+    border: none;
+  }
+  .completed {
+    text-decoration: line-through;
+  }
+  
