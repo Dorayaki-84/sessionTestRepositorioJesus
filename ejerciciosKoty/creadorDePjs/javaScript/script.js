@@ -5,17 +5,13 @@ class Personaje {
     this.raza = raza;
     this.sexo = sexo;
     this.arma = arma;
-    
-    while(isNaN(this.asesinatos)) {
+
+    while (isNaN(this.asesinatos)) {
       alert("El campo asesinatos debe ser un número");
       this.asesinatos = prompt("Introduce el valor de asesinatos");
-      
     }
-    
   }
-      
-    }
-  
+}
 
 //Creamos la función para crear el personaje
 function crearPersonaje() {
@@ -47,6 +43,37 @@ function crearPersonaje() {
   tabla.appendChild(fila);
 }
 
-//Creamos el evento para el botón
+//Si pulsa el boton de enviar sin datos en el formulario salta un alert esto se hace mediante una función
+
+function validarFormulario() {
+  let nombre = document.getElementById("Nombre").value;
+  let raza = document.getElementById("Raza").value;
+  let sexo = document.getElementById("Sexo").value;
+  let arma = document.getElementById("Arma").value;
+  let asesinatos = document.getElementById("Asesinatos").value;
+
+  if (nombre == "" || raza == "" || sexo == "" || arma == "" || asesinatos == "") {
+    alert("Debes rellenar todos los campos");
+  }
+}
+
+//Creamos el evento para que al pulsar el botón se ejecute la función de crearPersonaje o validarFormulario
 let boton = document.getElementById("botonCrear");
-boton.addEventListener("click", crearPersonaje);
+boton.addEventListener("click", function () {
+  validarFormulario();
+  crearPersonaje();
+}
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
