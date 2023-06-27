@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Creador de personaje</title>
+</head>
+
+<!--Creamos el formulario para recaudar los datos -->
+
+<body>
+    <div class="container">
+        <div class="d-flex p-2 bd-highlight justify-content-center">
+            <h1>Bienvenidos al creador de personajes.</h1>
+        </div>
+        <div class="d-flex flex-row bd-highlight justify-content-end">
+            <h6>V 1.0</h6>
+        </div>
+        <hr>
+
+        <div class="d-flex p-2 bd-highlight justify-content-center">
+            <h2>Rellena la información de tu personaje</h2>
+        </div>
+        <hr>
+
+        <form id="MiFormulario" action="" method="post">
+            <div class="mb-3">
+                <label for="Nombre" class="form-label"></label>
+                <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+            </div>
+
+            <div class="mb-3">
+                <label for="Raza" class="form-label"></label>
+                <input type="text" class="form-control" id="Raza" placeholder="Raza">
+            </div>
+
+            <div class="mb-3">
+                <label for="Sexo" class="form-label"></label>
+                <input type="text" class="form-control" id="Sexo" placeholder="Sexo">
+            </div>
+
+            <div class="mb-3">
+                <label class="visually-hidden" for="inlineFormSelectPref"></label>
+                <select class="form-control" id="Arma">
+                    <option selected>Arma...</option>
+                    <option value="1">Espada y Escudo</option>
+                    <option value="2">Espada a dos manos</option>
+                    <option value="3">Armas duales</option>
+                    <option value="3">Libro Arcano</option>
+                    <option value="3">Bastón</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="Asesinatos" class="form-label"></label>
+                <input type="text" class="form-control" id="Asesinatos" placeholder="Num. de Asesinatos">
+            </div>
+
+            <button id="botonCrear" submit class="btn btn-outline-primary">Crear personaje</button>
+            <button id="botonGuardar" type="submit" class="btn btn-outline-warning">Guardar</button>
+
+
+        </form>
+
+        <hr>
+  
+
+    <!--Vamos a crear la tabla para guardar la información -->
+  
+
+    <table id="tablaC" class="table table-dark table-striped">
+        
+        <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Raza</th>
+              <th>Sexo</th>
+              <th>Arma</th>
+              <th>Asesinatos</th>
+            </tr>
+          </thead>
+
+      </table>
+
+
+</div> <!-- Cierre del container -->
+
+    <script src="./javaScript/script.js"></script>
+    
+</body>
+
+</html>
