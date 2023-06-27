@@ -5,11 +5,7 @@ class Personaje {
     this.raza = raza;
     this.sexo = sexo;
     this.arma = arma;
-
-    while (isNaN(this.asesinatos)) {
-      alert("El campo asesinatos debe ser un número");
-      this.asesinatos = prompt("Introduce el valor de asesinatos");
-    }
+    this.asesinatos = asesinatos;
   }
 }
 
@@ -59,12 +55,7 @@ function validarFormulario() {
 
 //Creamos el evento para que al pulsar el botón se ejecute la función de crearPersonaje o validarFormulario
 let boton = document.getElementById("botonCrear");
-boton.addEventListener("click", function () {
-  validarFormulario();
-  crearPersonaje();
-}
-);
-
+boton.addEventListener("click", crearPersonaje);
 
 
 
