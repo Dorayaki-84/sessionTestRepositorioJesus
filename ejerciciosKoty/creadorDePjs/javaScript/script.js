@@ -58,12 +58,24 @@ function validarFormulario() {
 
   if (nombre == "" || raza == "" || sexo == "" || arma == "" || asesinatos == "") {
     alert("Debes rellenar todos los campos");
+   
   }
 }
 
-//Creamos el evento para que al pulsar el botón se ejecute la función de crearPersonaje o validarFormulario
+
+//Creamos el evento para que al pulsar el botón se ejecute la función de crearPersonaje o validarFormulario según si
+//está relleno o no el formulario.
+
 let boton = document.getElementById("botonCrear");
-boton.addEventListener("click", crearPersonaje);
+
+boton.addEventListener("click", function () {
+  if (!validarFormulario()) {
+    crearPersonaje();
+  } else {
+    validarFormulario();
+  }
+});
+
 
 
 
