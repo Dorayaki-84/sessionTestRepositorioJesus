@@ -1,4 +1,4 @@
-//Creamos la clase Personaje
+//Creamos la clase Personaje que actuara como plantilla para crear los personajes
 class Personaje {
   constructor(nombre, raza, sexo, arma, asesinatos) {
     this.nombre = nombre;
@@ -18,6 +18,12 @@ function crearPersonaje() {
   let arma = document.getElementById("Arma").value;
   let asesinatos = document.getElementById("Asesinatos").value;
 
+  //si asesinatos no es un número salta un alert, como veo lo he colocado en la funcion crearPersonaje
+  if (isNaN(asesinatos)) {
+    alert("El campo de asesinatos debe ser un número");
+    return;
+  }
+
   let personaje = new Personaje(nombre, raza, sexo, arma, asesinatos);
   let tabla = document.getElementById("tablaC");
   let fila = document.createElement("tr");
@@ -29,7 +35,9 @@ function crearPersonaje() {
   celdaNombre.innerHTML = personaje.nombre;
   celdaRaza.innerHTML = personaje.raza;
   celdaSexo.innerHTML = personaje.sexo;
-  celdaArma.innerHTML = personaje.arma;
+  //en la celda arma quiero capturar el valor del select, no el texto
+
+  celdaArma.innerHTML = document.getElementById("Arma").value;
   celdaAsesinatos.innerHTML = personaje.asesinatos;
   fila.appendChild(celdaNombre);
   fila.appendChild(celdaRaza);
