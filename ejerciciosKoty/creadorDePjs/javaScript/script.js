@@ -58,8 +58,11 @@ function validarFormulario() {
 
   if (nombre == "" || raza == "" || sexo == "" || arma == "" || asesinatos == "") {
     alert("Debes rellenar todos los campos");
-   
+    
+    return true; //con esto detengo la ejecución de la función crearPersonaje que llega despues.
+
   }
+  
 }
 
 
@@ -72,7 +75,7 @@ boton.addEventListener("click", function () {
   if (!validarFormulario()) {
     crearPersonaje();
   } else {
-    validarFormulario();
+    
   }
 });
 
