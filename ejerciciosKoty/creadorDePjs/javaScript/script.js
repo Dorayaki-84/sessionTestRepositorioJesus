@@ -11,8 +11,8 @@ class Personaje {
 
 //Creamos la función para crear el personaje
 function crearPersonaje() {
-  event.preventDefault();
-  let nombre = document.getElementById("Nombre").value;
+  event.preventDefault(); //esto es para que no se envie el formulario y se refresque la página
+  let nombre = document.getElementById("Nombre").value; //capturamos el valor de los inputs en variables
   let raza = document.getElementById("Raza").value;
   let sexo = document.getElementById("Sexo").value;
   let arma = document.getElementById("Arma").value;
@@ -24,6 +24,7 @@ function crearPersonaje() {
     return;
   }
 
+  // ahora creamos la tabla y las filas y celdas que contendrán los datos del personaje
   let personaje = new Personaje(nombre, raza, sexo, arma, asesinatos);
   let tabla = document.getElementById("tablaC");
   let fila = document.createElement("tr");
@@ -35,8 +36,6 @@ function crearPersonaje() {
   celdaNombre.innerHTML = personaje.nombre;
   celdaRaza.innerHTML = personaje.raza;
   celdaSexo.innerHTML = personaje.sexo;
-  //en la celda arma quiero capturar el valor del select, no el texto
-
   celdaArma.innerHTML = document.getElementById("Arma").value;
   celdaAsesinatos.innerHTML = personaje.asesinatos;
   fila.appendChild(celdaNombre);
