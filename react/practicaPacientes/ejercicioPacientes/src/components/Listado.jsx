@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useEffect } from "react";
 
 
-const Listado = ({ pacientes, setPaciente }) => {
+const Listado = ({ pacientes, setPaciente, eliminarPaciente }) => { //extraemos los props que se pasan desde app.js y los usamos en el componente
  
     useEffect(() => {
         if (pacientes.length > 0) {
@@ -34,6 +34,7 @@ const Listado = ({ pacientes, setPaciente }) => {
                   key={paciente.id}
                   paciente={paciente} 
                   setPaciente={setPaciente}
+                    eliminarPaciente={eliminarPaciente}
                 />
               ))}
             </>
@@ -50,6 +51,7 @@ const Listado = ({ pacientes, setPaciente }) => {
 Listado.propTypes = { //esto es para validar los props
     pacientes: PropTypes.array.isRequired,
     setPaciente: PropTypes.func.isRequired,
+    eliminarPaciente: PropTypes.func.isRequired
    
   };
 

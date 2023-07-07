@@ -4,7 +4,7 @@ import Error from "./Error";
 
 
 
-const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayendo el prop que se le pasa al formulario
+const Formulario = ({pacientes, setPacientes, paciente, setPaciente}) => { //estamos extrayendo el prop que se le pasa al formulario
   //el useState tiene que ser declarado aquí arriba para que funcione
 
   //Vamos a crear un hook para generar un id único
@@ -28,7 +28,16 @@ const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayen
   //vamos a crear otro hook para la valicación del formulario
   const [error, setError] = useState(false); //por defecto no hay error pero si hay error se cambia a true vamos a colocarlo en la validación del formulario
 
-    
+  //esto es para que cuando se edite un paciente se llene el formulario
+    useEffect(() => {
+    if (Object.keys(paciente).length > 0) {
+        setMascota(paciente.mascota)
+        setPropietario(paciente.propietario)
+        setEmail(paciente.email)
+        setAlta(paciente.alta)
+        setDolencia(paciente.dolencia)} 
+        
+}, [paciente]);
 
   //Aqui creamos una variable para validar el formulario y se le aplica al form
   const handleSubmit = (e) => {
@@ -55,10 +64,29 @@ const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayen
         email, 
         alta, 
         dolencia,
-        id: generarId()
+       
 
     };
-    setPacientes([...pacientes, objetoPaciente]); //esto es lo que se va a enviar al hook de pacientes pero en un arreglo nuevo al usar ... y te crear un paciente nuevo
+
+    if (paciente.id) {
+        //Editando el registro
+        objetoPaciente.id = paciente.id;
+        const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id === objetoPaciente.id ? objetoPaciente : paciente);
+      
+        setPacientes(pacientesActualizados);
+        setPaciente({}); //esto es para limpiar el console.log del objeto paciente
+    
+    } 
+      
+      
+      else {
+        //Nuevo registro
+        objetoPaciente.id = generarId(); //esto es para que se genere un id único
+        setPacientes([...pacientes, objetoPaciente]); //esto es lo que se va a enviar al hook de pacientes pero en un arreglo nuevo al usar ... y te crear un paciente nuevo
+
+      }
+      
+
   
 
          //CON ESTO REINICIAMOS EL FORMULARIO AL ENVIAR EL PACIENTE
@@ -149,7 +177,7 @@ const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayen
             <input
               type="submit"
               className="btn btn-success mt-3"
-              value="Añadir paciente"
+              value={paciente.id ? "Editar paciente" : "Agregar paciente"}  //esto es un ternario en un boton
             />
           </div>
         </form>
@@ -161,7 +189,8 @@ const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayen
 Formulario.propTypes = { //esto es para validar los props
     pacientes: PropTypes.array.isRequired,
     setPacientes: PropTypes.func.isRequired,
-    paciente: PropTypes.object.isRequired
+    paciente: PropTypes.object.isRequired,
+    setPaciente: PropTypes.func.isRequired
   };
 
 export default Formulario;

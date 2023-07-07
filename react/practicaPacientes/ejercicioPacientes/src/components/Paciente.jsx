@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
 
-const Paciente = ({ paciente, setPaciente }) => {
-  return (
+const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
+  
+  const handleEliminar = () => {
+    const respuesta = confirm("Deseas eliminar este paciente?");
+
+    if (respuesta) {
+        eliminarPaciente(paciente.id);
+
+    }
+};
+
+    return (
     <div className="p-3 mb-5 bg-light text-dark ">
       <p>
         Nombre: <span>{paciente.mascota}</span>
@@ -21,17 +31,25 @@ const Paciente = ({ paciente, setPaciente }) => {
       <div className="d-flex justify-content-between">
         <button type="button" className="btn btn-primary p-1 m-1"
         onClick={() => setPaciente(paciente)}
-        >Editar &times;</button>
-        <button type="button" className="btn btn-danger p-1 m-1">Eliminar &times;</button>
+        >Editar</button>
+       
+       
+        <button 
+        type="button" 
+        className="btn btn-danger p-1 m-1"
+        onClick={handleEliminar}                           //al pulsar el boton llamamos a la funcion eliminarPaciente y le pasamos el id del paciente
+        >Eliminar</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
+//esto es para validar los props
 Paciente.propTypes = {
-  //esto es para validar los props
-  paciente: PropTypes.object.isRequired,
-  setPaciente: PropTypes.func.isRequired,
-};
-
-export default Paciente;
+    // Validaciones de props
+    paciente: PropTypes.object.isRequired,
+    setPaciente: PropTypes.func.isRequired,
+    eliminarPaciente: PropTypes.func.isRequired,
+  };
+  
+  export default Paciente;
