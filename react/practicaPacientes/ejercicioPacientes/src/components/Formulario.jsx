@@ -4,7 +4,7 @@ import Error from "./Error";
 
 
 
-const Formulario = ({pacientes, setPacientes}) => { //estamos extrayendo el prop que se le pasa al formulario
+const Formulario = ({pacientes, setPacientes, paciente}) => { //estamos extrayendo el prop que se le pasa al formulario
   //el useState tiene que ser declarado aquí arriba para que funcione
 
   //Vamos a crear un hook para generar un id único
@@ -27,6 +27,8 @@ const Formulario = ({pacientes, setPacientes}) => { //estamos extrayendo el prop
 
   //vamos a crear otro hook para la valicación del formulario
   const [error, setError] = useState(false); //por defecto no hay error pero si hay error se cambia a true vamos a colocarlo en la validación del formulario
+
+    
 
   //Aqui creamos una variable para validar el formulario y se le aplica al form
   const handleSubmit = (e) => {
@@ -82,7 +84,9 @@ const Formulario = ({pacientes, setPacientes}) => { //estamos extrayendo el prop
         <form className="mb-5 p-3 bg-light" onSubmit={handleSubmit}>
         <div>
         {error && <Error mensaje="Hay campos vacíos"
+
         />}
+        
         </div>
           <label htmlFor="mascota" className="form-label">
             Nombre de la mascota:
@@ -157,6 +161,7 @@ const Formulario = ({pacientes, setPacientes}) => { //estamos extrayendo el prop
 Formulario.propTypes = { //esto es para validar los props
     pacientes: PropTypes.array.isRequired,
     setPacientes: PropTypes.func.isRequired,
+    paciente: PropTypes.object.isRequired
   };
 
 export default Formulario;

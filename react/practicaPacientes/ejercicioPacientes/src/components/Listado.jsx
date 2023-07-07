@@ -1,9 +1,18 @@
 import Paciente from "./Paciente";
 import PropTypes from 'prop-types';
+import {useEffect } from "react";
 
 
-const Listado = ({ pacientes }) => {
-  return (
+const Listado = ({ pacientes, setPaciente }) => {
+ 
+    useEffect(() => {
+        if (pacientes.length > 0) {
+            console.log("Nuevo paciente agregado")
+        }
+        
+     }, [pacientes]);
+ 
+    return (
         <div className="vh-100 overflow-auto">
           {pacientes && pacientes.length === 0 ? (
             <>
@@ -16,11 +25,15 @@ const Listado = ({ pacientes }) => {
             <>
               <h2 className="text-right display-6">Listado de pacientes</h2>
               <p className=".lead">Administra tus pacientes en esta sección.</p>
+
+              
+     
     
               {pacientes.map(paciente => (
                 <Paciente 
                   key={paciente.id}
                   paciente={paciente} 
+                  setPaciente={setPaciente}
                 />
               ))}
             </>
@@ -36,6 +49,7 @@ const Listado = ({ pacientes }) => {
 
 Listado.propTypes = { //esto es para validar los props
     pacientes: PropTypes.array.isRequired,
+    setPaciente: PropTypes.func.isRequired,
    
   };
 
