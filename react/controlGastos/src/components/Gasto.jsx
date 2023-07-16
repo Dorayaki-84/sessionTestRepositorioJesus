@@ -3,13 +3,19 @@ import { formatearFecha } from "../helpers";
 
 //importamos las imagenes
 
-import iconoComida from "../img/icono_comida.svg";
 import iconoAhorro from "../img/icono_ahorro.svg";
 import iconoCasa from "../img/icono_casa.svg";
 import iconoOcio from "../img/icono_ocio.svg";
 import iconoSalud from "../img/icono_salud.svg";
-import iconoGastos from "../img/icono_gastos.svg";
 import iconoSuscripciones from "../img/icono_suscripciones.svg";
+
+const diccionarioIconos = {
+  ahorro: iconoAhorro,
+  casa: iconoCasa,
+  ocio: iconoOcio,
+  salud: iconoSalud,
+  suscripciones: iconoSuscripciones,
+};
 
 const Gasto = ({ gasto }) => {
   const { categoria, nombre, cantidad, id, fecha } = gasto; //eso es distructuring, es como poner gasto.categoria, gasto.nombre, etc
@@ -17,7 +23,9 @@ const Gasto = ({ gasto }) => {
   return (
     <div className="gasto sombra">
       <div className="contenido-gasto">
-        {/* imagen */}
+        <img src={diccionarioIconos[categoria]} alt="Icono gasto"
+        
+        />
         <div className="descripcion-gasto">
           <p className="categoria">{categoria}</p>
           <p className="nombre-gasto">{nombre}</p>

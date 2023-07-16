@@ -43,7 +43,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={modal ? "fijar" : ""}> {/*esto es para que cuando se abra el modal el fondo se quede fijo*/}
       <Header
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
